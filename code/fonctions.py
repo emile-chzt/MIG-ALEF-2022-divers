@@ -1,13 +1,16 @@
+
+
+
 ###fonctions
 
-def cost_prod(H2_tons):
+def cost_prod(H2_tons : int):
     '''entrée en tonne
     en sortie un prix int'''
     if H2_tons > 1000:
         return H2_tons * 3
     else : return H2_tons * 5
 
-def cost_import(D_DISTANCES_CITIES, city, H2_need, road_cost):
+def cost_import(D_DISTANCES_CITIES : dict, city : str, H2_need: int, road_cost : float):
     '''H2_need (int) > 0
     city (string)
     D_DISTANCE_CITIES (dico des villes)
@@ -20,7 +23,7 @@ def cost_import(D_DISTANCES_CITIES, city, H2_need, road_cost):
     else : cost = H2_need * 3
     return cost
 
-def compute_cities_cost(D_DISTANCES_CITIES, d_prod_cities, d_use_cities, road_cost):
+def compute_cities_cost(D_DISTANCES_CITIES : dict, d_prod_cities : dict, d_use_cities: dict, road_cost : float):
     '''entrée : dico des prod et conso et coût routier(float)
     return dico des coûts'''
 
@@ -33,3 +36,4 @@ def compute_cities_cost(D_DISTANCES_CITIES, d_prod_cities, d_use_cities, road_co
 
             #coût négatif possible ( ville excédentaire )
     return d_cost_cities
+
